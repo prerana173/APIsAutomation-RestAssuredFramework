@@ -1,0 +1,565 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2022-02-06T20:39:03.242Z",
+        "line": 12,
+        "name": "Verify that API returns all relevant covid data details for the valid country code sent",
+        "description": "",
+        "id": "validating-getlatestcountrydatabycode-api;verify-that-api-returns-all-relevant-covid-data-details-for-the-valid-country-code-sent;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 2844000000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "getCountryDataByCode API is sent with \"in\" parameters and \"validHeader\" headers",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"in\"",
+                  "offset": 38
+                },
+                {
+                  "val": "\"validHeader\"",
+                  "offset": 58
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.sendCountryCodeAsQueryParam(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 3563000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "User calls \"country/code/\" with \"GET\" https request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"country/code/\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"GET\"",
+                  "offset": 32
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.callEndPointWithHttpMethod(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "API should return status code 200 and status line \"OK\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 30
+                },
+                {
+                  "val": "\"OK\"",
+                  "offset": 50
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.verifyResponseCodeAndStatusLine(int,java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 1630000000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "\"code\" in response body should be \"in\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"code\"",
+                  "offset": 0
+                },
+                {
+                  "val": "\"in\"",
+                  "offset": 34
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.verifyResponsePayloadContent(java.lang.String,java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@HappyPath"
+          },
+          {
+            "name": "@RegressionScenario"
+          },
+          {
+            "name": "@ValidHeadersAndValidQueryParam"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2022-02-06T20:39:11.514Z",
+        "line": 23,
+        "name": "Verify that API returns empty array when user sends invalid/ non existing country code",
+        "description": "",
+        "id": "validating-getlatestcountrydatabycode-api;verify-that-api-returns-empty-array-when-user-sends-invalid/-non-existing-country-code;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 1000000000,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "getCountryDataByCode API is sent with \"xyz\" parameters and \"validHeader\" headers",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"xyz\"",
+                  "offset": 38
+                },
+                {
+                  "val": "\"validHeader\"",
+                  "offset": 59
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.sendCountryCodeAsQueryParam(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1500000000,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "User calls \"country/code/\" with \"GET\" https request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"country/code/\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"GET\"",
+                  "offset": 32
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.callEndPointWithHttpMethod(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "API should return status code 200 and status line \"OK\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 30
+                },
+                {
+                  "val": "\"OK\"",
+                  "offset": 50
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.verifyResponseCodeAndStatusLine(int,java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "response body should be empty array",
+            "match": {
+              "location": "stepDefinitions.StepDefinitions.verifyResponsePayloadIsEmpty()"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@ValidHeadersAndNonExistingCountryCodeInQueryParam"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2022-02-06T20:39:14.029Z",
+        "line": 34,
+        "name": "Verify that API returns 401 status code with error message when user sends blank headers",
+        "description": "",
+        "id": "validating-getlatestcountrydatabycode-api;verify-that-api-returns-401-status-code-with-error-message-when-user-sends-blank-headers;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 1000000000,
+              "status": "passed"
+            },
+            "line": 27,
+            "name": "getCountryDataByCode API is sent with \"in\" parameters and \"invalidHeader\" headers",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"in\"",
+                  "offset": 38
+                },
+                {
+                  "val": "\"invalidHeader\"",
+                  "offset": 58
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.sendCountryCodeAsQueryParam(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 610000000,
+              "status": "passed"
+            },
+            "line": 28,
+            "name": "User calls \"country/code/\" with \"GET\" https request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"country/code/\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"GET\"",
+                  "offset": 32
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.callEndPointWithHttpMethod(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 29,
+            "name": "API should return status code 401 and status line \"Unauthorized\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "401",
+                  "offset": 30
+                },
+                {
+                  "val": "\"Unauthorized\"",
+                  "offset": 50
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.verifyResponseCodeAndStatusLine(int,java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 113000000,
+              "status": "passed"
+            },
+            "line": 30,
+            "name": "response body should return \"Invalid API key. Go to https://docs.rapidapi.com/docs/keys for more info.\" message",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Invalid API key. Go to https://docs.rapidapi.com/docs/keys for more info.\"",
+                  "offset": 28
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.validateErrorMessageInResponseBody(java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@BlankHeadersAndValidCountryCodeInQueryParam"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2022-02-06T20:39:15.752Z",
+        "line": 45,
+        "name": "Verify that API returns 404 status code with error message when user sends Http Method as POST instead of GET",
+        "description": "",
+        "id": "validating-getlatestcountrydatabycode-api;verify-that-api-returns-404-status-code-with-error-message-when-user-sends-http-method-as-post-instead-of-get;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 1014000000,
+              "status": "passed"
+            },
+            "line": 38,
+            "name": "getCountryDataByCode API is sent with \"in\" parameters and \"validHeader\" headers",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"in\"",
+                  "offset": 38
+                },
+                {
+                  "val": "\"validHeader\"",
+                  "offset": 58
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.sendCountryCodeAsQueryParam(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 469000000,
+              "status": "passed"
+            },
+            "line": 39,
+            "name": "User calls \"country/code/\" with \"POST\" https request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"country/code/\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"POST\"",
+                  "offset": 32
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.callEndPointWithHttpMethod(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 40,
+            "name": "API should return status code 404 and status line \"Not Found\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "404",
+                  "offset": 30
+                },
+                {
+                  "val": "\"Not Found\"",
+                  "offset": 50
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.verifyResponseCodeAndStatusLine(int,java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 63000000,
+              "status": "passed"
+            },
+            "line": 41,
+            "name": "response body should return \"Endpoint/country/code/ does not exist\" message",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"Endpoint/country/code/ does not exist\"",
+                  "offset": 28
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.validateErrorMessageInResponseBody(java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@ChangingHttpMethodFromGetToPost"
+          }
+        ]
+      },
+      {
+        "start_timestamp": "2022-02-06T20:39:17.313Z",
+        "line": 59,
+        "name": "Verify that covid case counts returned in response is never less than zero",
+        "description": "",
+        "id": "validating-getlatestcountrydatabycode-api;verify-that-covid-case-counts-returned-in-response-is-never-less-than-zero;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 1014000000,
+              "status": "passed"
+            },
+            "line": 49,
+            "name": "getCountryDataByCode API is sent with \"in\" parameters and \"validHeader\" headers",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"in\"",
+                  "offset": 38
+                },
+                {
+                  "val": "\"validHeader\"",
+                  "offset": 58
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.sendCountryCodeAsQueryParam(java.lang.String,java.lang.String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1390000000,
+              "status": "passed"
+            },
+            "line": 50,
+            "name": "User calls \"country/code/\" with \"GET\" https request",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"country/code/\"",
+                  "offset": 11
+                },
+                {
+                  "val": "\"GET\"",
+                  "offset": 32
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.callEndPointWithHttpMethod(java.lang.String,java.lang.String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "status": "passed"
+            },
+            "line": 51,
+            "name": "API should return status code 200 and status line \"OK\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "200",
+                  "offset": 30
+                },
+                {
+                  "val": "\"OK\"",
+                  "offset": 50
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.verifyResponseCodeAndStatusLine(int,java.lang.String)"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 63000000,
+              "status": "passed"
+            },
+            "line": 52,
+            "name": "value returned for \"confirmed\" key in response payload should not be less than zero",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"confirmed\"",
+                  "offset": 19
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.verifyCasesCountIsNotLessThanZero(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 16000000,
+              "status": "passed"
+            },
+            "line": 53,
+            "name": "value returned for \"recovered\" key in response payload should not be less than zero",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"recovered\"",
+                  "offset": 19
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.verifyCasesCountIsNotLessThanZero(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 31000000,
+              "status": "passed"
+            },
+            "line": 54,
+            "name": "value returned for \"critical\" key in response payload should not be less than zero",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"critical\"",
+                  "offset": 19
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.verifyCasesCountIsNotLessThanZero(java.lang.String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 31000000,
+              "status": "passed"
+            },
+            "line": 55,
+            "name": "value returned for \"deaths\" key in response payload should not be less than zero",
+            "match": {
+              "arguments": [
+                {
+                  "val": "\"deaths\"",
+                  "offset": 19
+                }
+              ],
+              "location": "stepDefinitions.StepDefinitions.verifyCasesCountIsNotLessThanZero(java.lang.String)"
+            },
+            "keyword": "And "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@verifyCasesCountIsNeverLessThanZero"
+          }
+        ]
+      }
+    ],
+    "name": "Validating getLatestCountryDataByCode API",
+    "description": "",
+    "id": "validating-getlatestcountrydatabycode-api",
+    "keyword": "Feature",
+    "uri": "file:src/test/java/features/getLatestCountryDataByCodeAPIValidation.feature",
+    "tags": []
+  }
+]

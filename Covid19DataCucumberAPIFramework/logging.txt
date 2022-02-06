@@ -1,0 +1,156 @@
+Request method:	GET
+Request URI:	https://covid-19-data.p.rapidapi.com/country/code/?code=in
+Proxy:			<none>
+Request params:	<none>
+Query params:	code=in
+Form params:	<none>
+Path params:	<none>
+Headers:		x-rapidapi-key=8741e73cf9mshd0d82a7acf7b2c0p153754jsneb9e2cc9d0c7
+				x-rapidapi-host=covid-19-data.p.rapidapi.com
+				Accept=*/*
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 OK
+Date: Sun, 06 Feb 2022 20:39:09 GMT
+Server: Apache/2.4.29 (Ubuntu)
+Cache-Control: no-cache, private
+ETag: "a53d7723b8fcbbd05d09c8d40c40e904"
+Vary: Accept
+Content-Length: 231
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Content-Type: application/json
+
+[
+    {
+        "country": "India",
+        "code": "IN",
+        "confirmed": 42188138,
+        "recovered": 40461148,
+        "critical": 8944,
+        "deaths": 502008,
+        "latitude": 20.593684,
+        "longitude": 78.96288,
+        "lastChange": "2022-02-06T04:55:12+01:00",
+        "lastUpdate": "2022-02-06T21:30:03+01:00"
+    }
+]
+Request method:	GET
+Request URI:	https://covid-19-data.p.rapidapi.com/country/code/?code=xyz
+Proxy:			<none>
+Request params:	<none>
+Query params:	code=xyz
+Form params:	<none>
+Path params:	<none>
+Headers:		x-rapidapi-key=8741e73cf9mshd0d82a7acf7b2c0p153754jsneb9e2cc9d0c7
+				x-rapidapi-host=covid-19-data.p.rapidapi.com
+				Accept=*/*
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 OK
+Date: Sun, 06 Feb 2022 20:39:14 GMT
+Server: Apache/2.4.29 (Ubuntu)
+Cache-Control: no-cache, private
+ETag: "d751713988987e9331980363e24189ce"
+Vary: Accept
+Content-Length: 2
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Content-Type: application/json
+
+[
+    
+]
+Request method:	GET
+Request URI:	https://covid-19-data.p.rapidapi.com/country/code/?code=in
+Proxy:			<none>
+Request params:	<none>
+Query params:	code=in
+Form params:	<none>
+Path params:	<none>
+Headers:		x-rapidapi-key= 
+				x-rapidapi-host= 
+				Accept=*/*
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 401 Unauthorized
+Content-Type: application/json
+Date: Sun, 06 Feb 2022 20:39:15 GMT
+Server: RapidAPI-1.2.8
+X-RapidAPI-Proxy-Response: true
+X-RapidAPI-Region: AWS - eu-west-1
+X-RapidAPI-Version: 1.2.8
+Content-Length: 91
+Connection: keep-alive
+
+{
+    "message": "Invalid API key. Go to https://docs.rapidapi.com/docs/keys for more info."
+}
+Request method:	POST
+Request URI:	https://covid-19-data.p.rapidapi.com/country/code/?code=in
+Proxy:			<none>
+Request params:	<none>
+Query params:	code=in
+Form params:	<none>
+Path params:	<none>
+Headers:		x-rapidapi-key=8741e73cf9mshd0d82a7acf7b2c0p153754jsneb9e2cc9d0c7
+				x-rapidapi-host=covid-19-data.p.rapidapi.com
+				Accept=*/*
+				Content-Type=application/x-www-form-urlencoded; charset=ISO-8859-1
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 404 Not Found
+Content-Type: application/json
+Date: Sun, 06 Feb 2022 20:39:17 GMT
+Server: RapidAPI-1.2.8
+X-RapidAPI-Proxy-Response: true
+X-RapidAPI-Region: AWS - eu-west-1
+X-RapidAPI-Version: 1.2.8
+Content-Length: 54
+Connection: keep-alive
+
+{
+    "message": "Endpoint/country/code/ does not exist"
+}
+Request method:	GET
+Request URI:	https://covid-19-data.p.rapidapi.com/country/code/?code=in
+Proxy:			<none>
+Request params:	<none>
+Query params:	code=in
+Form params:	<none>
+Path params:	<none>
+Headers:		x-rapidapi-key=8741e73cf9mshd0d82a7acf7b2c0p153754jsneb9e2cc9d0c7
+				x-rapidapi-host=covid-19-data.p.rapidapi.com
+				Accept=*/*
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+HTTP/1.1 200 OK
+Date: Sun, 06 Feb 2022 20:39:19 GMT
+Server: Apache/2.4.29 (Ubuntu)
+Cache-Control: no-cache, private
+ETag: "a53d7723b8fcbbd05d09c8d40c40e904"
+Vary: Accept
+Content-Length: 231
+Keep-Alive: timeout=5, max=100
+Connection: Keep-Alive
+Content-Type: application/json
+
+[
+    {
+        "country": "India",
+        "code": "IN",
+        "confirmed": 42188138,
+        "recovered": 40461148,
+        "critical": 8944,
+        "deaths": 502008,
+        "latitude": 20.593684,
+        "longitude": 78.96288,
+        "lastChange": "2022-02-06T04:55:12+01:00",
+        "lastUpdate": "2022-02-06T21:30:03+01:00"
+    }
+]
